@@ -1,4 +1,6 @@
 libomv4php
 ==========
 
-Extremely skeleton translation of bits of libopenmetaverse into php
+Don't get excited, this is an extremely, extremely skeleton translation of bits of libopenmetaverse into php.
+
+However, pull requests/patches are welcome.
