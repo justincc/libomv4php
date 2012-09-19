@@ -1,0 +1,9 @@
+CONTRIBUTORS
+
+All code based on the libopenmetaverse c# project [1].
+
+Additional changes by
+
+Justin Clark-Casey (justincc.org)
+
+[1] https://github.com/openmetaversefoundation/libopenmetaverse
