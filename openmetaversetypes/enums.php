@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (c) 2012, CONTRIBUTORS.txt
+ * Copyright (c) 2012, CONTRIBUTORS.md
  * All rights reserved.
  *
  * - Redistribution and use in source and binary forms, with or without
