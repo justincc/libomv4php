@@ -25,6 +25,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+namespace OpenMetaverse
+{
+
 /*
  * The different types of grid assets
  */
@@ -302,4 +305,5 @@ class WearableType
     const Invalid = 255;
 }
 
+}
 ?>
