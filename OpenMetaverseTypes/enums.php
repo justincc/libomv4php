@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Copyright (c) 2012, CONTRIBUTORS.md
  * All rights reserved.
@@ -29,7 +28,7 @@
 /*
  * The different types of grid assets
  */
-class AssetType 
+class AssetType
 {
     // Unknown asset type
     const Unknown = -1;
@@ -148,10 +147,10 @@ class AssetType
     const BasicRoot = 51;
 }
 
-// 
+//
 // Inventory Item Types, eg Script, Notecard, Folder, etc
-// 
-class InventoryType 
+//
+class InventoryType
 {
     // Unknown
     const Unknown = -1;
@@ -181,57 +180,57 @@ class InventoryType
     // Notecard
     const Notecard = 7;
 
-    // 
+    //
     const Category = 8;
 
     // Folder
     const Folder = 8;
 
-    // 
+    //
     const RootCategory = 9;
 
     // an LSL Script
     const LSL = 10;
 
     /*
-     // 
+     //
      //[Obsolete("See LSL")] LSLBytecode = 11,
-     // 
+     //
      //[Obsolete("See Texture")] TextureTGA = 12,
-     // 
+     //
      //[Obsolete] Bodypart = 13,
-     // 
+     //
      //[Obsolete] Trash = 14,
      */
 
-    // 
+    //
     const Snapshot = 15;
 
     /*
-     // 
+     //
      //[Obsolete] LostAndFound = 16,
      */
 
-    // 
+    //
     const Attachment = 17;
 
-    // 
+    //
     const Wearable = 18;
 
-    // 
+    //
     const Animation = 19;
 
-    // 
+    //
     const Gesture = 20;
 
-    // 
+    //
     const Mesh = 22;
 }
 
-// 
+//
 // Item Sale Status
-// 
-class SaleType 
+//
+class SaleType
 {
     // Not for sale
     const Not = 0;
@@ -246,59 +245,59 @@ class SaleType
     const Contents = 3;
 }
 
-// 
+//
 // Types of wearable assets
-// 
-class WearableType 
+//
+class WearableType
 {
     // Body shape
     const Shape = 0;
-    
+
     // Skin textures and attributes
     const Skin = 1;
-    
+
     // Hair
     const Hair = 2;
-    
+
     // Eyes
     const Eyes = 3;
-    
+
     // Shirt
     const Shirt = 4;
-    
+
     // Pants
     const Pants = 5;
-    
+
     // Shoes
     const Shoes = 6;
-    
+
     // Socks
     const Socks = 7;
-    
+
     // Jacket
     const Jacket = 8;
-    
+
     // Gloves
     const Gloves = 9;
-    
+
     // Undershirt
     const Undershirt = 10;
-    
+
     // Underpants
     const Underpants = 11;
-    
+
     // Skirt
     const Skirt = 12;
-    
+
     // Alpha mask to hide parts of the avatar
     const Alpha = 13;
-    
+
     // Tattoo
     const Tattoo = 14;
-    
+
     // Physics
     const Physics = 15;
-    
+
     // Invalid wearable asset
     const Invalid = 255;
 }
