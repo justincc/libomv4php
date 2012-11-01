@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2012, CONTRIBUTORS.md
  * All rights reserved.
@@ -27,7 +28,6 @@
 
 namespace OpenMetaverse
 {
-
 	/*
 	 * The different types of grid assets
 	 */
@@ -304,6 +304,6 @@ namespace OpenMetaverse
 		// Invalid wearable asset
 		const Invalid = 255;
 	}
-
 }
+
 ?>
