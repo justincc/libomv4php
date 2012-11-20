@@ -146,8 +146,6 @@ namespace OpenMetaverse
 
 		// Marketplace direct delivery outbox
 		const Outbox = 51;
-
-		const BasicRoot = 51;
 	}
 
 	//
