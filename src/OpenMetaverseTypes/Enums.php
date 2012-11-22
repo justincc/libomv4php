@@ -31,10 +31,10 @@ namespace OpenMetaverse
      * Generic base class for enums.
      */
     abstract class Enum
-    {
-        protected static $valueToName;
+    {              
+        protected $valueToName;
         
-        static abstract function Init();
+        //static abstract function Init();
                 
         /*
          * Resolve a value for this enum to a name.
@@ -43,10 +43,10 @@ namespace OpenMetaverse
          * 
          * @returns The name of the corresponding enum entry if found, otherwise NULL. 
          */
-        public static function GetName($value)
+        protected static function GetNameStatic($singleton, $value)
         {
-            if (array_key_exists($value, self::$valueToName))
-                return self::$valueToName[$value];
+            if (array_key_exists($value, $singleton->valueToName))
+                return $singleton->valueToName[$value];
             else
                 return NULL;
         }        
@@ -57,6 +57,8 @@ namespace OpenMetaverse
      */
     class AssetType extends Enum
     {
+        private static $singleton;
+        
         // Unknown asset type
         const Unknown = -1;
 
@@ -173,7 +175,9 @@ namespace OpenMetaverse
 
         static function Init()
         {
-            self::$valueToName = array(
+            self::$singleton = new AssetType();
+            
+            self::$singleton->valueToName = array(
                 "-1" => "Unknown",
                  "0" => "Texture",
                  "1" => "Sound",
@@ -210,7 +214,12 @@ namespace OpenMetaverse
                 "50" => "Inbox",
                 "51" => "Outbox"
             );  
-        }      
+        } 
+
+        public static function GetName($value)
+        {
+            return self::GetNameStatic(self::$singleton, $value);
+        }     
     }
 
     //
@@ -218,6 +227,8 @@ namespace OpenMetaverse
     //
     class InventoryType extends Enum
     {
+        private static $singleton;
+        
         // Unknown
         const Unknown = -1;
 
@@ -294,7 +305,9 @@ namespace OpenMetaverse
         
         static function Init()
         {
-            $valueToName = array(
+            self::$singleton = new InventoryType();
+            
+            self::$singleton->valueToName = array(
                 "-1" => "Unknown",
                  "0" => "Texture",
                  "1" => "Sound",
@@ -319,7 +332,12 @@ namespace OpenMetaverse
                 "20" => "Gesture",
                 "22" => "Mesh",
             ); 
-        }               
+        }     
+        
+        public static function GetName($value)
+        {
+            return self::GetNameStatic(self::$singleton, $value);
+        }                     
     }
 
     //
@@ -327,6 +345,8 @@ namespace OpenMetaverse
     //
     class SaleType extends Enum
     {
+        private static $singleton;
+        
         // Not for sale
         const Not = 0;
 
@@ -341,13 +361,20 @@ namespace OpenMetaverse
         
         static function Init()
         {
-            $valueToName = array(
+            self::$singleton = new SaleType();
+            
+            self::$singleton->valueToName = array(
                  "0" => "Not",
                  "1" => "Original",
                  "2" => "Copy",
                  "3" => "Contents"
             );
         }    
+        
+        public static function GetName($value)
+        {
+            return self::GetNameStatic(self::$singleton, $value);
+        }         
     }
 
     //
@@ -355,6 +382,8 @@ namespace OpenMetaverse
     //
     class WearableType extends Enum
     {
+        private static $singleton;
+        
         // Body shape
         const Shape = 0;
 
@@ -408,7 +437,9 @@ namespace OpenMetaverse
         
         static function Init()
         {
-             $valueToName = array(
+            self::$singleton = new WearableType();
+            
+            self::$singleton->valueToName = array(
                  "0" => "Shape",
                  "1" => "Skin",
                  "2" => "Hair",
@@ -428,6 +459,11 @@ namespace OpenMetaverse
                 "16" => "Invalid"
             );   
         }    
+        
+        public static function GetName($value)
+        {
+            return self::GetNameStatic(self::$singleton, $value);
+        }           
     }
 
     AssetType::Init();
