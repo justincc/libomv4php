@@ -31,13 +31,13 @@ namespace OpenMetaverse
      * Generic base class for enums.
      */
     abstract class Enum
-    {              
+    {
         /*
          * Resolve a value for this enum to a name.
-         * 
+         *
          * @param int $value
-         * 
-         * @returns The name of the corresponding enum entry if found, otherwise NULL. 
+         *
+         * @returns The name of the corresponding enum entry if found, otherwise NULL.
          */
         public static function GetName($value)
         {
@@ -46,7 +46,7 @@ namespace OpenMetaverse
 			return $pos !== false ? $pos : null;
 		}
     }
-    
+
     /*
      * The different types of grid assets
      */
