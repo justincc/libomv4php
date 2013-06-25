@@ -27,7 +27,7 @@
  */
 
 namespace OpenMetaverse
-{ 
+{
     /*
     *  Attachment points for objects on avatar bodies
     */
@@ -35,125 +35,125 @@ namespace OpenMetaverse
     {
          // Right hand if object was not previously attached
          // This has to be Default rather DefaultAP since Default is a reserved word in PHP
-         const DefaultAP = 0; 
-       
+         const DefaultAP = 0;
+
          // Chest
          const Chest = 1;
-       
+
          // Skull
          const Skull = 2;
-       
+
          // Left shoulder
-         const LeftShoulder = 3; 
-       
+         const LeftShoulder = 3;
+
          // Right shoulder
          const RightShoulder = 4;
-       
+
          // Left hand
          const LeftHand = 5;
-       
+
          // Right hand
          const RightHand = 6;
-       
+
          // Left foot
          const LeftFoot = 7;
-       
+
          // Right foot
          const RightFoot = 8;
-       
+
          // Spine
          const Spine = 9;
-       
+
          // Pelvis
          const Pelvis = 10;
-       
+
          // Mouth
          const Mouth = 11;
-       
+
          // Chin
          const Chin = 12;
-       
+
          // Left ear
          const LeftEar = 13;
-       
+
          // Right ear
          const RightEar = 14;
-       
+
          // Left eyeball
-         const LeftEyeball = 15; 
-       
+         const LeftEyeball = 15;
+
          // Right eyeball
          const RightEyeball = 16;
-       
+
          // Nose
          const Nose = 17;
-       
+
          // Right upper arm
-         const RightUpperArm = 18; 
-       
+         const RightUpperArm = 18;
+
          // Right forearm
          const RightForearm = 19;
-       
+
          // Left upper arm
          const LeftUpperArm = 20;
-        
+
          // Left forearm
          const LeftForearm = 21;
-        
+
          // Right hip
          const RightHip = 22;
-       
+
          // Right upper leg
-         const RightUpperLeg = 23; 
-       
+         const RightUpperLeg = 23;
+
          // Right lower leg
          const RightLowerLeg = 24;
-       
+
          // Left hip
          const LeftHip = 25;
-       
+
          // Left upper leg
-         const LeftUpperLeg = 26; 
-       
+         const LeftUpperLeg = 26;
+
          // Left lower leg
          const LeftLowerLeg = 27;
-       
+
          // Stomach
          const Stomach = 28;
-       
+
          // Left pectoral
          const LeftPec = 29;
-       
+
          // Right pectoral
          const RightPec = 30;
-       
+
          // HUD Center position 2
          const HUDCenter2 = 31;
-       
+
          // HUD Top-right
          const HUDTopRight = 32;
-       
+
          // HUD Top
          const HUDTop = 33;
-       
+
          // HUD Top-left
-         const HUDTopLeft = 34; 
-       
+         const HUDTopLeft = 34;
+
          // HUD Center
          const HUDCenter = 35;
-       
+
          // HUD Bottom-left
-         const HUDBottomLeft = 36; 
-       
+         const HUDBottomLeft = 36;
+
          // HUD Bottom
          const HUDBottom = 37;
-       
+
          // HUD Bottom-right
-         const HUDBottomRight = 38; 
-       
+         const HUDBottomRight = 38;
+
          // Neck
-         const Neck = 39; 
-       
+         const Neck = 39;
+
          // Avatar Center
          const Root = 40;
     }

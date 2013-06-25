@@ -31,34 +31,27 @@ namespace OpenMetaverse
      * Generic base class for enums.
      */
     abstract class Enum
-    {              
-        protected $valueToName;
-        
-        //static abstract function Init();
-                
+    {
         /*
          * Resolve a value for this enum to a name.
-         * 
+         *
          * @param int $value
-         * 
-         * @returns The name of the corresponding enum entry if found, otherwise NULL. 
+         *
+         * @returns The name of the corresponding enum entry if found, otherwise NULL.
          */
-        protected static function GetNameStatic($singleton, $value)
+        public static function GetName($value)
         {
-            if (array_key_exists($value, $singleton->valueToName))
-                return $singleton->valueToName[$value];
-            else
-                return NULL;
-        }        
+			$class = new \ReflectionClass(get_called_class());
+			$pos = array_search($value, $class->getConstants());
+			return $pos !== false ? $pos : null;
+		}
     }
-    
+
     /*
      * The different types of grid assets
      */
     class AssetType extends Enum
     {
-        private static $singleton;
-        
         // Unknown asset type
         const Unknown = -1;
 
@@ -172,54 +165,6 @@ namespace OpenMetaverse
 
         // Marketplace direct delivery outbox
         const Outbox = 51;
-
-        static function Init()
-        {
-            self::$singleton = new AssetType();
-            
-            self::$singleton->valueToName = array(
-                "-1" => "Unknown",
-                 "0" => "Texture",
-                 "1" => "Sound",
-                 "2" => "CallingCard",
-                 "3" => "Landmark",
-                 "4" => "Script",
-                 "5" => "Clothing",
-                 "6" => "Object",
-                 "7" => "Notecard",
-                 "8" => "Folder",
-                 "9" => "RootFolder",
-                "10" => "LSLText",
-                "11" => "LSLBytecode",
-                "12" => "TextureTGA",
-                "13" => "Bodypart",
-                "14" => "TrashFolder",
-                "15" => "SnapshotFolder",
-                "16" => "LostAndFoundFolder",
-                "17" => "SoundWAV",
-                "18" => "ImageTGA",
-                "19" => "ImageJPEG",
-                "20" => "Animation",
-                "21" => "Gesture",
-                "22" => "Simstate",
-                "23" => "FavoriteFolder",
-                "24" => "Link",
-                "25" => "LinkFolder",
-                "26" => "EnsembleStart",
-                "45" => "EnsembleEnd",
-                "46" => "CurrentOutfitFolder",
-                "47" => "OutfitFolder",
-                "48" => "MyOutfitsFolder",
-                "49" => "Mesh",
-                "50" => "Inbox",
-                "51" => "Outbox"
-            );  
-        } 
-
-        public static function GetName($value)
-        {
-            return self::GetNameStatic(self::$singleton, $value);
-        }     
     }
 
     //
@@ -227,8 +172,6 @@ namespace OpenMetaverse
     //
     class InventoryType extends Enum
     {
-        private static $singleton;
-        
         // Unknown
         const Unknown = -1;
 
@@ -302,42 +245,6 @@ namespace OpenMetaverse
 
         //
         const Mesh = 22;
-        
-        static function Init()
-        {
-            self::$singleton = new InventoryType();
-            
-            self::$singleton->valueToName = array(
-                "-1" => "Unknown",
-                 "0" => "Texture",
-                 "1" => "Sound",
-                 "2" => "CallingCard",
-                 "3" => "Landmark",
-                 "4" => "Script",
-                 "5" => "Clothing",
-                 "6" => "Object",
-                 "7" => "Notecard",
-                 "8" => "Folder",
-                 "9" => "RootCategory",
-                "10" => "LSL",
-                "11" => "LSLBytecode",
-                "12" => "TextureTGA",
-                "13" => "Bodypart",
-                "14" => "Trash",
-                "15" => "Snapshot",
-                "16" => "LostAndFound",
-                "17" => "Attachment",
-                "18" => "Wearable",
-                "19" => "Animation",
-                "20" => "Gesture",
-                "22" => "Mesh",
-            ); 
-        }     
-        
-        public static function GetName($value)
-        {
-            return self::GetNameStatic(self::$singleton, $value);
-        }                     
     }
 
     //
@@ -345,8 +252,6 @@ namespace OpenMetaverse
     //
     class SaleType extends Enum
     {
-        private static $singleton;
-        
         // Not for sale
         const Not = 0;
 
@@ -358,23 +263,6 @@ namespace OpenMetaverse
 
         // The contents of the object are for sale
         const Contents = 3;
-        
-        static function Init()
-        {
-            self::$singleton = new SaleType();
-            
-            self::$singleton->valueToName = array(
-                 "0" => "Not",
-                 "1" => "Original",
-                 "2" => "Copy",
-                 "3" => "Contents"
-            );
-        }    
-        
-        public static function GetName($value)
-        {
-            return self::GetNameStatic(self::$singleton, $value);
-        }         
     }
 
     //
@@ -382,8 +270,6 @@ namespace OpenMetaverse
     //
     class WearableType extends Enum
     {
-        private static $singleton;
-        
         // Body shape
         const Shape = 0;
 
@@ -434,42 +320,7 @@ namespace OpenMetaverse
 
         // Invalid wearable asset
         const Invalid = 255;
-        
-        static function Init()
-        {
-            self::$singleton = new WearableType();
-            
-            self::$singleton->valueToName = array(
-                 "0" => "Shape",
-                 "1" => "Skin",
-                 "2" => "Hair",
-                 "3" => "Eyes",
-                 "4" => "Shirt",
-                 "5" => "Pants",
-                 "6" => "Shoes",
-                 "7" => "Socks",
-                 "8" => "Jacket",
-                 "9" => "Gloves",
-                "10" => "Undershirt",
-                "11" => "Underpants",
-                "12" => "Skirt",
-                "13" => "Alpha",
-                "14" => "Tattoo",
-                "15" => "Physics",
-                "16" => "Invalid"
-            );   
-        }    
-        
-        public static function GetName($value)
-        {
-            return self::GetNameStatic(self::$singleton, $value);
-        }           
     }
-
-    AssetType::Init();
-    InventoryType::Init();
-    SaleType::Init();
-    WearableType::Init();
 }
 
 ?>
